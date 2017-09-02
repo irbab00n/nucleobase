@@ -18,6 +18,14 @@ class Dashboard extends React.Component {
 
   render() {
 
+    const pages = {
+      '': <h1>Dashboard View?</h1>,
+      'edit': <h1>Edit View</h1>,
+      'schedule': <h1>Schedule View</h1>,
+      'trainers': <h1>Trainers View</h1>,
+      'clients': <h1>Clients View</h1> 
+    }
+
     return (
 
       <div className=".col-lg-12" style={{

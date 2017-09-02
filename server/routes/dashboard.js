@@ -23,7 +23,7 @@ router.route('/trainers')
     res.render('index.ejs');
   });
 
-router.route('/profile')
+router.route('/clients')
   .get(middleware.auth.verify, (req, res) => {
     res.render('index.ejs');
   });
