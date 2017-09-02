@@ -44,7 +44,9 @@
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "redis": "^2.7.1",
-    "url": "^0.11.0"
+    "redux": "^3.7.2",
+    "url": "^0.11.0",
+    "webpack": "^2.3.2"
   },
   "devDependencies": {
     "babel-loader": "^7.0.0",
@@ -59,7 +61,6 @@
     "nodemon": "^1.11.0",
     "sinon": "^3.2.1",
     "supertest": "^3.0.0",
-    "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"
   },
   "babel": {
