@@ -1,16 +1,13 @@
 import React from 'react';
 
 import Navbar from '../../components/navbar';
-import SearchBar from './searchbar';
 
-class Finder extends React.Component {
+class Dashboard extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-
-    console.log(this.props.path);
 
     return (
 
@@ -25,9 +22,8 @@ class Finder extends React.Component {
           height: '100%',
           backgroundColor: '#d9d9d9'
         }}>
-          
-          <SearchBar />
-          <a href="/dashboard">Dashboard View</a>
+          Dashboard View
+          <a href="/dashboard/"></a>
 
         </div>
 
@@ -35,7 +31,6 @@ class Finder extends React.Component {
     );
 
   }
-
 }
 
-export default Finder;
+export default Dashboard;

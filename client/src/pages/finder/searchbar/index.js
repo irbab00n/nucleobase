@@ -13,7 +13,7 @@ class SearchBar extends React.Component {
         Search Bar
       </div>
 
-    )
+    );
 
   }
 }
