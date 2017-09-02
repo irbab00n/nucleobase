@@ -24,7 +24,7 @@ class Dashboard extends React.Component {
       'schedule': <h1>Schedule View</h1>,
       'trainers': <h1>Trainers View</h1>,
       'clients': <h1>Clients View</h1> 
-    }
+    };
 
     return (
 
