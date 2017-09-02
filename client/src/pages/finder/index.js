@@ -30,6 +30,7 @@ class Finder extends React.Component {
         </div>
 
       </div>
+      
     );
 
   }
