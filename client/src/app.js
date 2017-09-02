@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Login from './Login';
-import Signup from './Signup';
+import Finder from './pages/finder';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
+
+const endpoint = window.location.pathname.split('/');
 
 const pages = {
-  '/': <h1>Hello World from React</h1>,
-  '/login': <Login />,
-  '/signup': <Signup />
+  '': <Finder path={endpoint}/>,
+  'login': <Login path={endpoint}/>,
+  'signup': <Signup path={endpoint}/>
 };
 
-ReactDOM.render(pages[window.location.pathname], document.getElementById('root'));
+ReactDOM.render(pages[endpoint[1]], document.getElementById('root'));

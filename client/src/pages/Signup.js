@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
 
 class Signup extends React.Component {
   constructor(props) {
