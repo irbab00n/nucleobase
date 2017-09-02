@@ -44,12 +44,14 @@ describe('/dashboard', function() {
       .get('/dashboard')
       .expect(302)
       .end( (err, res) => {
-        if (err) return done(err);
+        if (err) {
+          return done(err);
+        }
         expect(spy.calledWith(__dirname + '/views/index.ejs')).to.be.true;
         spy.restore();
         done();
-      })
-  })
+      });
+  });
 
 });
 
