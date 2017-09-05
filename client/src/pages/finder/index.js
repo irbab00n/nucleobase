@@ -20,7 +20,7 @@ class Finder extends React.Component {
         <Navbar />
 
         <div className="col-sm-8 col-sm-offset-2" style={{
-          height: '96%',
+          height: '94.8%',
           backgroundColor: '#d9d9d9'
         }}>
           

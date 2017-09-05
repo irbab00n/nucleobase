@@ -1,5 +1,8 @@
 import React from 'react';
 
+import FlatButton from 'material-ui/FlatButton';
+
+
 class DashNav extends React.Component {
   constructor(props) {
     super(props);
@@ -8,14 +11,22 @@ class DashNav extends React.Component {
   render() {
 
     return (
+
       <div>
-        <ul>
-          <li><a href="/dashboard/">Dashboard</a></li>
-          <li><a href="/dashboard/edit">Edit</a></li>
-          <li><a href="/dashboard/schedule">Schedule</a></li>
-          <li><a href="/dashboard/trainers">Trainers</a></li>
-          <li><a href="/dashboard/clients">Clients</a></li>
-        </ul>
+        <span style={{width: '100%', height: '2px', backgroundColor: '#cee61f'}}></span>
+        <div style={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-evenly',
+          alignItems: 'center',
+          backgroundColor: '#002957'
+        }}>
+          <FlatButton href="/dashboard/" label="Dashboard" style={{color: 'white'}} hoverColor="#BEBAB9"/>
+          <FlatButton href="/dashboard/edit" label="Edit" style={{color: 'white'}} hoverColor="#BEBAB9"/>
+          <FlatButton href="/dashboard/schedule" label="Schedule" style={{color: 'white'}} hoverColor="#BEBAB9"/>
+          <FlatButton href="/dashboard/trainers" label="Trainers" style={{color: 'white'}} hoverColor="#BEBAB9"/>
+        </div>
       </div>
     );
 

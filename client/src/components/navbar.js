@@ -6,12 +6,12 @@ import FlatButton from 'material-ui/FlatButton';
 const Navbar = (props) => (
 
   <div style={{
-    height: '4%',
+    height: '50px',
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: 'gray'
+    backgroundColor: '#111822'
   }}>
     
     <div className="col-sm-8 col-sm-offset-2" style={{
@@ -42,9 +42,21 @@ const Navbar = (props) => (
         justifyContent: 'space-evenly',
         alignItems: 'center',
       }}>
-        <FlatButton href="/signup" label="Signup" style={{color: 'white'}}/>
+        <FlatButton href="/" label="Search" style={{color: 'white'}} hoverColor="#002957"/>
         <span style={{width: '30px'}}></span>
-        <FlatButton href="/login" label="Login" style={{color: 'white'}}/>
+        <FlatButton href="/dashboard" label="Dashboard" style={{color: 'white'}} hoverColor="#002957"/>
+      </div>
+
+      <div style={{
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+      }}>
+        <FlatButton href="/signup" label="Signup" style={{color: 'white'}} hoverColor="#002957"/>
+        <span style={{width: '30px'}}></span>
+        <FlatButton href="/login" label="Login" style={{color: 'white'}} hoverColor="#002957"/>
       </div>
 
     </div>

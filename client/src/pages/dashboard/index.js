@@ -29,9 +29,12 @@ class Dashboard extends React.Component {
         <Navbar />
 
         <div className="col-sm-8 col-sm-offset-2" style={{
-          height: '96%',
-          backgroundColor: '#d9d9d9'
+          height: '94.8%',
+          backgroundColor: '#BEBAB9',
+          padding: 0
         }}>
+
+          <DashNav />
 
           {
             this.props.path[2] ?
@@ -39,7 +42,6 @@ class Dashboard extends React.Component {
               <h1>Dashboard Default</h1>
           }
         
-          <DashNav />
 
         </div>
 
