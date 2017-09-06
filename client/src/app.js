@@ -17,7 +17,7 @@ class Root extends React.Component {
     super(props);
     this.state = {
       loggedIn: false
-    }
+    };
   }
 
   componentWillMount() {
