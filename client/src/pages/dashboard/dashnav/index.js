@@ -24,12 +24,12 @@ class DashNav extends React.Component {
           flexDirection: 'row',
           justifyContent: 'space-evenly',
           alignItems: 'center',
-          backgroundColor: '#002957'
+          backgroundColor: '#111822'
         }}>
-          <FlatButton href="/dashboard/" label="Dashboard" style={{color: 'white'}} hoverColor="#2D6186"/>
-          <FlatButton href="/dashboard/edit" label="Edit" style={{color: 'white'}} hoverColor="#2D6186"/>
-          <FlatButton href="/dashboard/schedule" label="Schedule" style={{color: 'white'}} hoverColor="#2D6186"/>
-          <FlatButton href="/dashboard/trainers" label="Trainers" style={{color: 'white'}} hoverColor="#2D6186"/>
+          <FlatButton href="/dashboard/" label="Dashboard" style={{color: 'white'}} hoverColor="#2b3c55"/>
+          <FlatButton href="/dashboard/schedule" label="Schedule" style={{color: 'white'}} hoverColor="#2b3c55"/>
+          <FlatButton href="/dashboard/trainers" label="Trainers" style={{color: 'white'}} hoverColor="#2b3c55"/>
+          <FlatButton href="/dashboard/profile" label="Profile" style={{color: 'white'}} hoverColor="#2b3c55"/>
         </div>
       </div>
     );

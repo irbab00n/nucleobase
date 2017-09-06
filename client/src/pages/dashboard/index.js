@@ -5,11 +5,12 @@ import Navbar from '../../components/navbar';
 import DashNav from './dashnav';
 
 import Main from './main';
+import Schedule from './schedule';
 
 
 const pages = {
-  'edit': <h1>Edit View</h1>,
-  'schedule': <h1>Schedule View</h1>,
+  'profile': <h1>Edit Profile View</h1>,
+  'schedule': <Schedule />,
   'trainers': <h1>Trainers View</h1>,
   'clients': <h1>Clients View</h1> 
 };
@@ -17,25 +18,6 @@ const pages = {
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loggedIn: false
-    };
-  }
-
-  componentDidMount() {
-    $.ajax({
-      type: 'GET',
-      url: '/verify',
-      success: (data) => {
-        console.log('logged in: ', data.message);
-        this.setState({
-          loggedIn: data.message
-        });
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
   }
 
   render() {
@@ -47,11 +29,11 @@ class Dashboard extends React.Component {
         width: '100%'
       }}>
 
-        <Navbar loggedIn={this.state.loggedIn}/>
+        <Navbar loggedIn={this.props.loggedIn}/>
 
         <div className="col-sm-8 col-sm-offset-2" style={{
           height: '94.8%',
-          backgroundColor: '#BEBAB9',
+          backgroundColor: '#DCD8D7',
           padding: 0
         }}>
 

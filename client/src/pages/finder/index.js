@@ -7,25 +7,6 @@ import SearchBar from './searchbar';
 class Finder extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loggedIn: false
-    };
-  }
-
-  componentDidMount() {
-    $.ajax({
-      type: 'GET',
-      url: '/verify',
-      success: (data) => {
-        console.log('logged in: ', data.message);
-        this.setState({
-          loggedIn: data.message
-        });
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
   }
 
   render() {
@@ -37,7 +18,7 @@ class Finder extends React.Component {
         width: '100%'
       }}>
 
-        <Navbar loggedIn={this.state.loggedIn}/>
+        <Navbar loggedIn={this.props.loggedIn}/>
 
         <div className="col-sm-8 col-sm-offset-2" style={{
           height: '94.8%',

@@ -6,25 +6,6 @@ import Navbar from '../components/navbar';
 class Login extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loggedIn: false
-    };
-  }
-
-  componentDidMount() {
-    $.ajax({
-      type: 'GET',
-      url: '/verify',
-      success: (data) => {
-        console.log('logged in: ', data.message);
-        this.setState({
-          loggedIn: data.message
-        });
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    });
   }
 
   render() {
@@ -37,7 +18,7 @@ class Login extends React.Component {
         backgroundColor: '#BEBAB9'
       }}>
 
-        <Navbar loggedIn={this.state.loggedIn}/>
+        <Navbar loggedIn={this.props.loggedIn}/>
 
         <div className="col-sm-6 col-sm-offset-3" style={{
           height: '100%',
@@ -56,7 +37,7 @@ class Login extends React.Component {
               <input type="password" className="form-control" name="password" />
             </div>
 
-            <button type="submit" className="btn btn-warning btn-lg">Login</button>
+            <button type="submit" className="btn btn-lg" style={{backgroundColor: '#FDED01'}}>Login</button>
           </form>
 
           <hr />

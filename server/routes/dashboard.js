@@ -10,7 +10,7 @@ router.route('/')
     });
   });
 
-router.route('/edit')
+router.route('/profile')
   .get(middleware.auth.verify, (req, res) => {
     res.render('index.ejs', {
       loggedIn: true

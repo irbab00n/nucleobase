@@ -1,17 +1,18 @@
 import React from 'react';
 
 import FlatButton from 'material-ui/FlatButton';
+import Paper from 'material-ui/Paper';
 
 
 const Navbar = (props) => (
 
-  <div style={{
+  <Paper zDepth={2} style={{
     height: '50px',
     width: '100%',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#111822'
+    backgroundColor: '#4986A2'
   }}>
     
     <div className="col-sm-8 col-sm-offset-2" style={{
@@ -81,7 +82,7 @@ const Navbar = (props) => (
 
     </div>
 
-  </div>
+  </Paper>
 
 );
 
