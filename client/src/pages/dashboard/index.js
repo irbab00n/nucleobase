@@ -4,9 +4,10 @@ import $ from 'jquery';
 import Navbar from '../../components/navbar';
 import DashNav from './dashnav';
 
+import Main from './main';
+
 
 const pages = {
-  '': <h1>Dashboard View?</h1>,
   'edit': <h1>Edit View</h1>,
   'schedule': <h1>Schedule View</h1>,
   'trainers': <h1>Trainers View</h1>,
@@ -18,7 +19,7 @@ class Dashboard extends React.Component {
     super(props);
     this.state = {
       loggedIn: false
-    }
+    };
   }
 
   componentDidMount() {
@@ -59,7 +60,7 @@ class Dashboard extends React.Component {
           {
             this.props.path[2] ?
               pages[this.props.path[2]] :
-              <h1>Dashboard Default</h1>
+              <Main />
           }
         
 

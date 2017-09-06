@@ -19,7 +19,7 @@ module.exports.logged = (req, res, next) => {
     return next();
   }
   res.status(200).send({message: false});
-}
+};
 
 module.exports.session = session({
   store: new RedisStore({

@@ -9,7 +9,7 @@ class Finder extends React.Component {
     super(props);
     this.state = {
       loggedIn: false
-    }
+    };
   }
 
   componentDidMount() {

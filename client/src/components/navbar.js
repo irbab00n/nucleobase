@@ -45,13 +45,13 @@ const Navbar = (props) => (
         
         {
           !props.loggedIn ?
-          <span></span>
-          :
-          <div>
-            <FlatButton href="/" label="Search" style={{color: 'white'}} hoverColor="#002957"/>
-            <span style={{width: '30px'}}></span>
-            <FlatButton href="/dashboard" label="Dashboard" style={{color: 'white'}} hoverColor="#002957"/>
-          </div>
+            <span></span>
+            :
+            <div>
+              <FlatButton href="/" label="Search" style={{color: 'white'}} hoverColor="#4DC1EA"/>
+              <span style={{width: '30px'}}></span>
+              <FlatButton href="/dashboard" label="Dashboard" style={{color: 'white'}} hoverColor="#4DC1EA"/>
+            </div>
         }
 
         
@@ -67,13 +67,13 @@ const Navbar = (props) => (
       }}>
         {
           props.loggedIn ?
-          <FlatButton href="/logout" label="Logout" style={{color: 'white'}} hoverColor="#002957"/>
-        :
-          <div>
-            <FlatButton href="/signup" label="Signup" style={{color: 'white'}} hoverColor="#002957"/>
-            <span style={{width: '30px'}}></span>
-            <FlatButton href="/login" label="Login" style={{color: 'white'}} hoverColor="#002957"/>
-          </div>
+            <FlatButton href="/logout" label="Logout" style={{color: 'white'}} hoverColor="#4DC1EA"/>
+            :
+            <div>
+              <FlatButton href="/signup" label="Signup" style={{color: 'white'}} hoverColor="#4DC1EA"/>
+              <span style={{width: '30px'}}></span>
+              <FlatButton href="/login" label="Login" style={{color: 'white'}} hoverColor="#4DC1EA"/>
+            </div>
         }
 
         

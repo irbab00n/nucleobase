@@ -27,6 +27,6 @@ app.use('/api/profiles', routes.profiles);
 
 app.get('/verify', middleware.auth.logged, (req, res) => {
   res.status(200).send({message: true});
-})
+});
 
 module.exports = app;

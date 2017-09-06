@@ -12,7 +12,11 @@ class DashNav extends React.Component {
 
     return (
 
-      <div>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: '100%',
+      }}>
         <span style={{width: '100%', height: '2px', backgroundColor: '#cee61f'}}></span>
         <div style={{
           width: '100%',
