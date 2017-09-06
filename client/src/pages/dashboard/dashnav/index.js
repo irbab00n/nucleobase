@@ -26,10 +26,10 @@ class DashNav extends React.Component {
           alignItems: 'center',
           backgroundColor: '#002957'
         }}>
-          <FlatButton href="/dashboard/" label="Dashboard" style={{color: 'white'}} hoverColor="#BEBAB9"/>
-          <FlatButton href="/dashboard/edit" label="Edit" style={{color: 'white'}} hoverColor="#BEBAB9"/>
-          <FlatButton href="/dashboard/schedule" label="Schedule" style={{color: 'white'}} hoverColor="#BEBAB9"/>
-          <FlatButton href="/dashboard/trainers" label="Trainers" style={{color: 'white'}} hoverColor="#BEBAB9"/>
+          <FlatButton href="/dashboard/" label="Dashboard" style={{color: 'white'}} hoverColor="#2D6186"/>
+          <FlatButton href="/dashboard/edit" label="Edit" style={{color: 'white'}} hoverColor="#2D6186"/>
+          <FlatButton href="/dashboard/schedule" label="Schedule" style={{color: 'white'}} hoverColor="#2D6186"/>
+          <FlatButton href="/dashboard/trainers" label="Trainers" style={{color: 'white'}} hoverColor="#2D6186"/>
         </div>
       </div>
     );

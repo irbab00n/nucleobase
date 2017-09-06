@@ -33,12 +33,16 @@ class Login extends React.Component {
 
       <div style={{
         height: '100%',
-        width: '100%'
+        width: '100%',
+        backgroundColor: '#BEBAB9'
       }}>
 
         <Navbar loggedIn={this.state.loggedIn}/>
 
-        <div className="col-sm-6 col-sm-offset-3">
+        <div className="col-sm-6 col-sm-offset-3" style={{
+          height: '100%',
+          backgroundColor: '#DCD8D7'
+        }}>
 
           <h1><span className="fa fa-sign-in"></span> Login</h1>
 
