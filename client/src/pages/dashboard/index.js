@@ -6,12 +6,14 @@ import DashNav from './dashnav';
 
 import Main from './main';
 import Schedule from './schedule';
+import Trainers from './trainers';
+import Clients from './clients';
 
 
 const pages = {
   'profile': <h1>Edit Profile View</h1>,
   'schedule': <Schedule />,
-  'trainers': <h1>Trainers View</h1>,
+  'trainers': <Trainers />,
   'clients': <h1>Clients View</h1> 
 };
 
