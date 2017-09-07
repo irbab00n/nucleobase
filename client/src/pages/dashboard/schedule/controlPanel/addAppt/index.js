@@ -137,7 +137,6 @@ class AddAppointment extends React.Component {
               onChange={(e) => this.addUpdater(e, {type: 'price'})}
             />
           </div>
-          <span style={{height: '30px'}}></span>
 
         </div>
       </Dialog>

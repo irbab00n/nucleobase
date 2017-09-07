@@ -18,7 +18,7 @@ class Schedule extends React.Component {
         <div className="col-lg-3 col-xsm-6" style={{
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: '#e6ffff'
+          backgroundColor: '#ffffff'
         }}>
           <ControlPanel />
         </div>
@@ -26,8 +26,8 @@ class Schedule extends React.Component {
         <div className="col-lg-9 col-xsm-6" style={{
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-evenly',
-          backgroundColor: '#e6ffe6', 
+          justifyContent: 'space-evenly', 
+          padding: '0'
         }}>
           <div style={{
             height: '500px',
