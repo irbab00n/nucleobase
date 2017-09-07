@@ -56,7 +56,7 @@ var buildYear = function(startIndex) {
 
     var day = function(index) {
       return {number: index};
-    }
+    };
 
     var week = function() {
       return [null, null, null, null, null, null, null];
@@ -94,7 +94,7 @@ var buildYear = function(startIndex) {
   var monthProto = function(name, calendar) {
     let newMonth = {name: name, calendar: calendar};
     return newMonth;
-  }
+  };
 
   var year = [];
   var startIndex = startIndex || 0;

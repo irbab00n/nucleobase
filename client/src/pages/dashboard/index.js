@@ -23,7 +23,7 @@ class Dashboard extends React.Component {
     super(props);
     this.state = {
       year: buildYear(0)
-    }
+    };
   }
 
   render() {

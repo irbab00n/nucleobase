@@ -43,4 +43,4 @@ class Schedule extends React.Component {
   }
 }
 
-export default Schedule
+export default Schedule;
