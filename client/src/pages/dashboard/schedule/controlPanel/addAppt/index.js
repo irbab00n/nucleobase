@@ -2,6 +2,7 @@ import React from 'react';
 
 import Dialog from 'material-ui/Dialog';
 import TimePicker from 'material-ui/TimePicker';
+import DatePicker from 'material-ui/DatePicker';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
@@ -12,12 +13,13 @@ class AddAppointment extends React.Component {
     super(props);
     this.state = {
       addLocation: '',
-      addDate: '',
-      addPrice: '',
+      addDate: {},
+      addPrice: '$',
       addFromTime: '',
       addToTime: ''
     };
     this.handleAddSubmit = this.handleAddSubmit.bind(this);
+    this.addDateUpdater = this.addDateUpdater.bind(this);
     this.addFromTimeUpdater = this.addFromTimeUpdater.bind(this);
     this.addToTimeUpdater = this.addToTimeUpdater.bind(this);
   }
@@ -28,6 +30,12 @@ class AddAppointment extends React.Component {
       'price': () => this.setState({addPrice: event.target.value})
     };
     options[option.type]();
+  }
+
+  addDateUpdater(e, date) {
+    this.setState({
+      addDate: date
+    });
   }
 
   addFromTimeUpdater(e, date) {
@@ -44,7 +52,7 @@ class AddAppointment extends React.Component {
 
   handleAddSubmit() {
     const { addLocation, addDate, addPrice, addFromTime, addToTime} = this.state;
-    // console.log('submitted: ', addLocation, addDate, addPrice, addFromTime, addToTime);
+    console.log('submitted! ', 'location: ', addLocation, 'date: ', addDate, 'price: ', addPrice, 'from: ', addFromTime, 'to: ', addToTime);
     this.props.handleToggle({type: 'addOpen'});
   }
 
@@ -82,6 +90,22 @@ class AddAppointment extends React.Component {
           flexDirection: 'column',
           justifyContent: 'center',
         }}>
+
+          <span style={{height: '30px'}}>Choose Appointment Date:</span>
+          <div style={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
+            alignContent: 'center'
+          }}>
+            <DatePicker 
+              hintText="Date"
+              value={this.state.addDate}
+              onChange={this.addDateUpdater}
+            />
+          </div>
+          <span style={{height: '30px'}}></span>
 
           <span style={{height: '30px'}}>Choose Appointment Times:</span>
           <div style={{
