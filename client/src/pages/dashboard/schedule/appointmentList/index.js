@@ -1,5 +1,9 @@
 import React from 'react';
 
+import List from './list';
+import Preview from './preview';
+
+
 class ApptList extends React.Component {
   constructor(props) {
     super(props);
@@ -21,19 +25,9 @@ class ApptList extends React.Component {
           height: '100%',
         }}>
 
-          <div className="col-lg-4 col-sm-4" style={{
-            height: '100%',
-            backgroundColor: '#DCD8D7'
-          }}>
-            Result List
-          </div>
+          <List />
 
-          <div className="col-lg-8 col-sm-8" style={{
-            height: '100%',
-            backgroundColor: '#BEBAB9'
-          }}>
-            Preview
-          </div>
+          <Preview />
 
         </div>
       </div>
