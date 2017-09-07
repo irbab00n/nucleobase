@@ -1,5 +1,9 @@
 import React from 'react';
 
+import ControlPanel from './controlPanel';
+import Calendar from './calendar';
+
+
 class Schedule extends React.Component {
   constructor(props) {
     super(props);
@@ -7,65 +11,39 @@ class Schedule extends React.Component {
 
   render() {
 
-    console.log('view rendered: Schedule');
-
     return (
 
-      <div style={{
-        height: '96%',
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'row',
-        backgroundColor: '#002957'
-      }}>
-
-        <div id="left-side" style={{
-          height: '100%',
-          width: '25%',
-          minWidth: '200px',
+      <div style={{height: '96%', width: '100%'}}>
+        
+        <div className="col-lg-3 col-xsm-6" style={{
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: '#DCD8D7'
+          backgroundColor: '#e6ffff'
         }}>
-          <span>Control panel</span>
+
+          <ControlPanel />
+
         </div>
 
-        <div id="right-side" style={{
-          height: '100%',
-          width: '75%',
-          minWidth: '400px',
+        <div className="col-lg-9 col-xsm-6" style={{
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-evenly',
-          alignItems: 'center',
+          backgroundColor: '#e6ffe6', 
         }}>
 
           <div style={{
-            height: '70%',
-            width: '100%',
+            height: '500px',
+            minWidth: '500px',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: '#b6b1af'
+            backgroundColor: '#BEBAB9'
           }}>
-            Schedule Component here
-          </div>
-
-          <div style={{
-            height: '30%',
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: '#a9a4a2'
-          }}>
-            Additional Drawer
+            <Calendar year={this.props.year}/>
           </div>
 
         </div>
-
       </div>
 
     );
