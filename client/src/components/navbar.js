@@ -6,7 +6,7 @@ import Paper from 'material-ui/Paper';
 
 const Navbar = (props) => (
 
-  <Paper zDepth={2} style={{
+  <Paper zDepth={1} style={{
     height: '50px',
     width: '100%',
     display: 'flex',

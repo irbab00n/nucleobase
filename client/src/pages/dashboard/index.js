@@ -39,7 +39,7 @@ class Dashboard extends React.Component {
 
         <div className="col-sm-8 col-sm-offset-2" style={{
           height: '94.8%',
-          backgroundColor: '#DCD8D7',
+          backgroundColor: '#FFFFFF',
           padding: 0
         }}>
 
