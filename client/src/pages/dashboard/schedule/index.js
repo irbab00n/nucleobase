@@ -20,9 +20,7 @@ class Schedule extends React.Component {
           flexDirection: 'column',
           backgroundColor: '#e6ffff'
         }}>
-
           <ControlPanel />
-
         </div>
 
         <div className="col-lg-9 col-xsm-6" style={{
@@ -31,7 +29,6 @@ class Schedule extends React.Component {
           justifyContent: 'space-evenly',
           backgroundColor: '#e6ffe6', 
         }}>
-
           <div style={{
             height: '500px',
             minWidth: '500px',
@@ -42,8 +39,8 @@ class Schedule extends React.Component {
           }}>
             <Calendar year={this.props.year}/>
           </div>
-
         </div>
+
       </div>
 
     );
