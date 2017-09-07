@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ControlPanel from './controlPanel';
-import Calendar from './calendar';
+import ApptList from './appointmentList';
 
 
 class Schedule extends React.Component {
@@ -28,17 +28,7 @@ class Schedule extends React.Component {
           justifyContent: 'space-evenly', 
           padding: '0'
         }}>
-          <div style={{
-            height: '600px',
-            minWidth: '500px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: '#BEBAB9'
-          }}>
-            <Calendar year={this.props.year}/>
-          </div>
-
+          <ApptList />
         </div>
 
         <div className="row" style={{

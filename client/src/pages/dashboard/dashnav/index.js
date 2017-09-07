@@ -24,7 +24,7 @@ class DashNav extends React.Component {
           flexDirection: 'row',
           justifyContent: 'space-evenly',
           alignItems: 'center',
-          backgroundColor: '#111822'
+          backgroundColor: '#4DC1EA'
         }}>
           <FlatButton href="/dashboard/" label="Dashboard" style={{color: 'white'}} hoverColor="#2b3c55"/>
           <FlatButton href="/dashboard/schedule" label="Schedule" style={{color: 'white'}} hoverColor="#2b3c55"/>
