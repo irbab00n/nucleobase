@@ -1,21 +1,18 @@
 
 const express = require('express');
 const middleware = require('../middleware');
+const path = require('path');
 
 const router = express.Router();
 
 router.route('/')
   .get((req, res) => {
-    // res.render('index.ejs');
-    console.log('Reached the root');
-    res.status(200);
+    res.sendFile(path.join(__dirname + '/../../public/dist/index.html'));
   });
 
 router.route('/login')
   .get((req, res) => {
-    // res.render('index.ejs', { message: req.flash('loginMessage') });
-    console.log('Reached the login page');
-    res.status(200);
+    res.sendFile(path.join(__dirname + '/../../public/dist/index.html'));
   })
   .post(middleware.passport.authenticate('local-login', {
     successRedirect: '/dashboard',
@@ -25,9 +22,7 @@ router.route('/login')
 
 router.route('/signup')
   .get((req, res) => {
-    // res.render('index.ejs', { message: req.flash('signupMessage') });
-    console.log('Reached the signup page');
-    res.status(200);
+    res.sendFile(path.join(__dirname + '/../../public/dist/index.html'));
   })
   .post(middleware.passport.authenticate('local-signup', {
     successRedirect: '/profile',

@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+import { Link } from 'react-router-dom';
 
 import Navbar from '../../components/navbar';
 import SearchBar from './searchbar';
@@ -26,7 +26,7 @@ class Finder extends React.Component {
         }}>
           
           <SearchBar />
-          <a href="/dashboard">Dashboard View</a>
+          <Link to="/dashboard">Dashboard View</Link>
 
         </div>
 

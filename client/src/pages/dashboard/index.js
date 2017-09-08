@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+import { Route } from 'react-router-dom';
 
 import Navbar from '../../components/navbar';
 import DashNav from './dashnav';
@@ -10,19 +10,14 @@ import Trainers from './trainers';
 import Clients from './clients';
 
 
-const pages = {
-  'profile': <h1>Edit Profile View</h1>,
-  'schedule': <Schedule />,
-  'trainers': <Trainers />,
-  'clients': <h1>Clients View</h1> 
-};
-
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
+
+    console.log(this.props);
 
     return (
 
@@ -31,7 +26,7 @@ class Dashboard extends React.Component {
         width: '100%'
       }}>
 
-        <Navbar loggedIn={this.props.loggedIn}/>
+        <Navbar />
 
         <div className="col-sm-8 col-sm-offset-2" style={{
           height: '94.8%',
@@ -41,10 +36,14 @@ class Dashboard extends React.Component {
 
           <DashNav />
 
-          {this.props.children}
+          <Route path={`${this.props.match.url}/schedule`} component={Schedule}/>
+          <Route path={`${this.props.match.url}`} render={() => (
+            <Main />
+          )}/>
         
 
         </div>
+
 
       </div>
     );
