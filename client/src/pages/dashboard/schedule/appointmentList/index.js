@@ -22,7 +22,7 @@ class ApptList extends React.Component {
       }}>
         <div className="row" style={{
           width: '100%',
-          height: '100%',
+          height: '600px',
         }}>
 
           <List />
@@ -38,3 +38,6 @@ class ApptList extends React.Component {
 }
 
 export default ApptList;
+
+
+// Will need a function to be able to lift the currently selected appointment window into the state to pass it down to the preview component

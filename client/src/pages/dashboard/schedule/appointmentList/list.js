@@ -1,5 +1,10 @@
 import React from 'react';
 
+import Entry from './entry';
+
+import appointments from './dummy';
+
+
 class List extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +18,17 @@ class List extends React.Component {
         height: '100%',
         backgroundColor: '#DCD8D7'
       }}>
-        Result List
+        <div style={{
+          height: '600px',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'center',
+          overflow: 'scroll'
+        }}>
+        
+        </div>
       </div>
 
     );

@@ -23,6 +23,7 @@ class Schedule extends React.Component {
         </div>
 
         <div className="col-lg-9 col-xsm-6" style={{
+          height: '600px',
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-evenly', 

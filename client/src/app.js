@@ -26,9 +26,7 @@ class Root extends React.Component {
       url: '/verify',
       success: (data) => {
         console.log('logged in: ', data.message);
-        this.setState({
-          loggedIn: data.message
-        });
+        this.state.loggedIn = data.message;
       },
       error: (err) => {
         console.log(err);
