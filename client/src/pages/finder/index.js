@@ -18,7 +18,7 @@ class Finder extends React.Component {
         width: '100%'
       }}>
 
-        <Navbar loggedIn={this.props.loggedIn}/>
+        <Navbar/>
 
         <div className="col-sm-8 col-sm-offset-2" style={{
           height: '94.8%',

@@ -41,11 +41,7 @@ class Dashboard extends React.Component {
 
           <DashNav />
 
-          {
-            this.props.path[2] ?
-              pages[this.props.path[2]] :
-              <Main />
-          }
+          {this.props.children}
         
 
         </div>

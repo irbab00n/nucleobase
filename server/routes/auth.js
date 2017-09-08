@@ -6,12 +6,16 @@ const router = express.Router();
 
 router.route('/')
   .get((req, res) => {
-    res.render('index.ejs');
+    // res.render('index.ejs');
+    console.log('Reached the root');
+    res.status(200);
   });
 
 router.route('/login')
   .get((req, res) => {
-    res.render('index.ejs', { message: req.flash('loginMessage') });
+    // res.render('index.ejs', { message: req.flash('loginMessage') });
+    console.log('Reached the login page');
+    res.status(200);
   })
   .post(middleware.passport.authenticate('local-login', {
     successRedirect: '/dashboard',
@@ -21,7 +25,9 @@ router.route('/login')
 
 router.route('/signup')
   .get((req, res) => {
-    res.render('index.ejs', { message: req.flash('signupMessage') });
+    // res.render('index.ejs', { message: req.flash('signupMessage') });
+    console.log('Reached the signup page');
+    res.status(200);
   })
   .post(middleware.passport.authenticate('local-signup', {
     successRedirect: '/profile',
