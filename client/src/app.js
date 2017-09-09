@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route, IndexRoute, hashHistory } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, hashHistory } from 'react-router-dom';
 import $ from 'jquery';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -23,4 +23,3 @@ ReactDOM.render(
   </MuiThemeProvider>, 
   document.getElementById('root')
 );
-

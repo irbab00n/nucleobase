@@ -8,6 +8,7 @@ import Main from './main';
 import Schedule from './schedule';
 import Trainers from './trainers';
 import Clients from './clients';
+import EditProfile from './editProfile';
 
 
 class Dashboard extends React.Component {
@@ -37,9 +38,9 @@ class Dashboard extends React.Component {
           <DashNav />
 
           <Route path={`${this.props.match.url}/schedule`} component={Schedule}/>
-          <Route path={`${this.props.match.url}`} render={() => (
-            <Main />
-          )}/>
+          <Route path={`${this.props.match.url}/trainers`} component={Trainers}/>
+          <Route path={`${this.props.match.url}/profile`} component={EditProfile}/>
+          <Route exact path={`${this.props.match.url}`} component={Main}/>
         
 
         </div>
