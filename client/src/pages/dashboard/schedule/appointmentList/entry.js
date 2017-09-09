@@ -8,7 +8,7 @@ const Entry = (props) => (
     display: 'flex',
     flexDirection: 'row',
   }}>
-    Hello
+    {props.appointment.location}
   </div>
 
 );

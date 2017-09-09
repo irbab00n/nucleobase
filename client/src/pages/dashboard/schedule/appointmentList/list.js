@@ -27,7 +27,11 @@ class List extends React.Component {
           alignItems: 'center',
           overflow: 'scroll'
         }}>
-        
+          {
+            appointments.map((appointment, i) => (
+              <Entry key={i} appointment={appointment} />
+            ))
+          }
         </div>
       </div>
 
