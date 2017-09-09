@@ -7,6 +7,11 @@ import Preview from './preview';
 class ApptList extends React.Component {
   constructor(props) {
     super(props);
+    this.cancelAppointment = this.cancelAppointment.bind(this);
+  }
+
+  cancelAppointment() {
+    console.log('CANCEL_APPOINTMENT_FUNCTION');
   }
 
   render() {
@@ -27,9 +32,10 @@ class ApptList extends React.Component {
 
           <div className="col-lg-4 col-sm-4" style={{
             height: '100%',
+            padding: '0',
             backgroundColor: '#DCD8D7'
           }}>
-            <ListComponent />
+            <ListComponent cancel={this.cancelAppointment}/>
           </div>
 
           <Preview />
