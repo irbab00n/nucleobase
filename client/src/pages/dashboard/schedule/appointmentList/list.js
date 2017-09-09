@@ -59,6 +59,7 @@ class ListComponent extends React.Component {
                   }
                   rightIconButton={iconButtonElement(i)}
                   style={{padding: '0'}}
+                  onClick={() => this.props.updatePreview(appointment)}
                 />
                 <Divider key={'x' + i} inset={true} />
               </div>
