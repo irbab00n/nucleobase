@@ -8,7 +8,7 @@ import ClearIcon from 'material-ui/svg-icons/content/clear';
 
 import appointments from './dummy';
 import { parseTime } from './../../../../helpers/parseTime';
-import { parseDateAbrv, parseDateFull } from './../../../../helpers/parseDate';
+import { parseDateAbrv } from './../../../../helpers/parseDate';
 
 
 class ListComponent extends React.Component {
