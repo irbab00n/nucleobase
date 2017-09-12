@@ -12,23 +12,23 @@ class StepThree extends React.Component {
       goals: '',
       goalTextCount: 255,
     };
-    this.qualUpdater = this.qualUpdater.bind(this);
-    this.goalUpdater = this.goalUpdater.bind(this);
+    this.infoUpdater = this.infoUpdater.bind(this);
     this.stepThreeUpdater = this.stepThreeUpdater.bind(this);
   }
 
-  qualUpdater(e) {
-    this.setState({
-      qualifications: e.target.value,
-      qualTextCount: 255 - e.target.value.length
-    });
-  }
-
-  goalUpdater(e) {
-    this.setState({
-      goals: e.target.value,
-      goalTextCount: 255 - e.target.value.length
-    });
+  infoUpdater(type, e) {
+    if (type === 'qual') {
+      this.setState({
+        qualifications: e.target.value,
+        qualTextCount: 255 - e.target.value.length
+      });
+    }
+    if (type === 'goal') {
+      this.setState({
+        goals: e.target.value,
+        goalTextCount: 255 - e.target.value.length
+      });
+    }
   }
 
   stepThreeUpdater() {
@@ -73,7 +73,7 @@ class StepThree extends React.Component {
           floatingLabelShrinkStyle={{color: '#6a6462'}}
           textareaStyle={{backgroundColor: '#f3f2f1'}}
           value={this.state.qualifications}
-          onChange={this.qualUpdater}
+          onChange={(e) => this.infoUpdater('qual', e)}
         /><br/>
         <span style={{alignSelf: 'flex-end', color: '#6a6462'}}>Characters remaining: <span style={{color: '#4DC1EA'}}>{this.state.qualTextCount}</span></span>
         <TextField
@@ -88,7 +88,7 @@ class StepThree extends React.Component {
           floatingLabelShrinkStyle={{color: '#6a6462'}}
           textareaStyle={{backgroundColor: '#f3f2f1'}}
           value={this.state.goals}
-          onChange={this.goalUpdater}
+          onChange={(e) => this.infoUpdater('goal', e)}
         /><br/>
         <span style={{alignSelf: 'flex-end', color: '#6a6462'}}>Characters remaining: <span style={{color: '#4DC1EA'}}>{this.state.goalTextCount}</span></span>
       

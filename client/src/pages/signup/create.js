@@ -5,6 +5,7 @@ import { Step, Stepper, StepLabel, StepButton, StepContent } from 'material-ui/S
 import StepOne from './steps/stepOne';
 import StepTwo from './steps/stepTwo';
 import StepThree from './steps/stepThree';
+import StepFour from './steps/stepFour';
 
 class Create extends React.Component {
   constructor(props) {
@@ -105,8 +106,7 @@ class Create extends React.Component {
                 Final Submission
               </StepLabel>
               <StepContent>
-                Hi
-                {console.log(this.state)}
+                <StepFour />
               </StepContent>
             </Step>
           </Stepper>
