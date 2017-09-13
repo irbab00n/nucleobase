@@ -60,7 +60,7 @@ class StepThree extends React.Component {
         flexDirection: 'column',
       }}>
         <span style={{height: '15px'}}></span>
-        <h4>Your Qualifications</h4>
+        <h3>Your Qualifications</h3>
         <TextField
           errorText={this.state.qualTextCount <= 0 ? 'You are limited to 255 characters!' : ''}
           rows={3}

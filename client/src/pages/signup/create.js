@@ -7,10 +7,13 @@ import StepTwo from './steps/stepTwo';
 import StepThree from './steps/stepThree';
 import StepFour from './steps/stepFour';
 
+import AJAX from '../../ajax.js';
+
 class Create extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      session: {},
       finished: false,
       stepIndex: 0,
       type: '',
@@ -20,10 +23,19 @@ class Create extends React.Component {
       biography: '',
       qualifications: '',
       goals: '',
+      gyms: '',
+      profileImage: ''
     };
     this.selectProfileType = this.selectProfileType.bind(this);
     this.stepTwoUpdater = this.stepTwoUpdater.bind(this);
     this.stepThreeUpdater = this.stepThreeUpdater.bind(this);
+    this.stepFourUpdater = this.stepFourUpdater.bind(this);
+  }
+
+  componentWillMount() {
+    AJAX.get('/session', {}, (session) => {
+      this.setState({session: session});
+    });
   }
 
   selectProfileType(type) {
@@ -57,9 +69,19 @@ class Create extends React.Component {
     });
   }
 
+  stepFourUpdater(options) {
+    const { gyms, profileImage } = options;
+    this.setState({
+      gyms,
+      profileImage
+    });
+  }
+
   render() {
 
-    const { stepIndex, type } = this.state;
+    console.log('state: ', this.state);
+
+    const { stepIndex, type, session } = this.state;
 
     return (
 
@@ -79,16 +101,22 @@ class Create extends React.Component {
           >
             <Step>
               <StepButton onClick={() => this.setState({stepIndex: 0})}>
-                Choose account type
+                Choose Account Type
               </StepButton>
               <StepContent>
                 <StepOne select={this.selectProfileType}/>
               </StepContent>
             </Step>
             <Step>
-              <StepButton onClick={() => this.setState({stepIndex: 1})}>
-                Build profile
-              </StepButton>
+              {
+                this.state.type === '' ?
+                  <StepLabel>
+                    Basic Info
+                  </StepLabel> :
+                  <StepButton onClick={() => this.setState({stepIndex: 1})}>
+                    Basic Info
+                  </StepButton>
+              }
               <StepContent>
                 <StepTwo updateInfo={this.stepTwoUpdater} profileType={type}/>
               </StepContent>
@@ -103,10 +131,10 @@ class Create extends React.Component {
             </Step>
             <Step>
               <StepLabel>
-                Final Submission
+                Profile Picture &
               </StepLabel>
               <StepContent>
-                <StepFour />
+                <StepFour session={session} updateInfo={this.stepFourUpdater}/>
               </StepContent>
             </Step>
           </Stepper>
