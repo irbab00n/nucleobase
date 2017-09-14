@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 import { Step, Stepper, StepLabel, StepButton, StepContent } from 'material-ui/Stepper';
 
@@ -83,15 +84,21 @@ class Create extends React.Component {
     const { stepIndex, type, session, finished } = this.state;
 
     if (finished === true) {
-      session.biography = this.state.biography;
-      session.first = this.state.firstName;
-      session.goals = this.state.goals;
-      session.gyms = this.state.gyms;
-      session.image_url = this.state.image_url;
-      session.last = this.state.lastName;
-      session.phone = this.state.phoneNumber;
-      session.qualification = this.state.qualification;
-      session.type = this.state.type;
+      var options = {
+        biography: this.state.biography,
+        first: this.state.firstName,
+        goals: this.state.goals,
+        gyms: this.state.gyms,
+        image_url: this.state.image_url,
+        id: this.state.session.id,
+        last: this.state.lastName,
+        phone: this.state.phoneNumber,
+        qualification: this.state.qualification,
+        type: this.state.type
+      };
+      AJAX.put('/ihateandy2', options, (result) => {
+        window.location.pathname = '/dashboard';
+      });
     }
 
     return (
