@@ -44,7 +44,15 @@ const Navbar = (props) => (
         justifyContent: 'space-evenly',
         alignItems: 'center',
       }}>
-
+        {
+          typeof props.session === 'object' && props.session.type !== null ?
+            <div>
+              <Link to="/"><FlatButton label="Search" style={{color: 'white'}} hoverColor="#4DC1EA"/></Link>
+              <span style={{width: '30px'}}></span>
+              <Link to="/dashboard"><FlatButton label="Dashboard" style={{color: 'white'}} hoverColor="#4DC1EA"/></Link>
+            </div> :
+            <span></span>
+        }
       </div>
 
       <div style={{
@@ -55,11 +63,15 @@ const Navbar = (props) => (
         alignItems: 'center',
       }}>
         {
-          <div>
-            <Link to="/signup"><FlatButton label="Signup" style={{color: 'white'}} hoverColor="#4DC1EA"/></Link>
-            <span style={{width: '30px'}}></span>
-            <Link to="/login"><FlatButton label="Login" style={{color: 'white'}} hoverColor="#4DC1EA"/></Link>
-          </div>
+          typeof props.session === 'object' ?
+            <div>
+              <a href="/logout"><FlatButton label="Logout" style={{color: 'white'}} hoverColor="#4DC1EA"/></a>
+            </div> :
+            <div>
+              <Link to="/signup"><FlatButton label="Signup" style={{color: 'white'}} hoverColor="#4DC1EA"/></Link>
+              <span style={{width: '30px'}}></span>
+              <Link to="/login"><FlatButton label="Login" style={{color: 'white'}} hoverColor="#4DC1EA"/></Link>
+            </div>
         }
 
         
