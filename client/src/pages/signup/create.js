@@ -73,7 +73,8 @@ class Create extends React.Component {
     const { gyms, profileImage } = options;
     this.setState({
       gyms,
-      profileImage
+      profileImage,
+      finished: true
     });
   }
 
@@ -81,7 +82,11 @@ class Create extends React.Component {
 
     console.log('state: ', this.state);
 
-    const { stepIndex, type, session } = this.state;
+    const { stepIndex, type, session, finished } = this.state;
+
+    if (finished === true) {
+      console.log('finished');
+    }
 
     return (
 
