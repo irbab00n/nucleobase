@@ -60,7 +60,7 @@ class StepFour extends React.Component {
     const { gyms, imgSrc } = this.state;
     let options = {
       gyms: JSON.stringify(gyms),
-      profileImage: imgSrc
+      image_url: imgSrc
     };
     this.props.updateInfo(options);
   }

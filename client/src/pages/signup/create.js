@@ -21,10 +21,10 @@ class Create extends React.Component {
       lastName: '',
       phoneNumber: '',
       biography: '',
-      qualifications: '',
+      qualification: '',
       goals: '',
       gyms: '',
-      profileImage: ''
+      image_url: ''
     };
     this.selectProfileType = this.selectProfileType.bind(this);
     this.stepTwoUpdater = this.stepTwoUpdater.bind(this);
@@ -61,31 +61,37 @@ class Create extends React.Component {
   }
 
   stepThreeUpdater(options) {
-    const { qualifications, goals } = options;
+    const { qualification, goals } = options;
     this.setState({
-      qualifications,
+      qualification,
       goals,
       stepIndex: 3
     });
   }
 
   stepFourUpdater(options) {
-    const { gyms, profileImage } = options;
+    const { gyms, image_url } = options;
     this.setState({
       gyms,
-      profileImage,
+      image_url,
       finished: true
     });
   }
 
   render() {
 
-    console.log('state: ', this.state);
-
     const { stepIndex, type, session, finished } = this.state;
 
     if (finished === true) {
-      console.log('finished');
+      session.biography = this.state.biography;
+      session.first = this.state.firstName;
+      session.goals = this.state.goals;
+      session.gyms = this.state.gyms;
+      session.image_url = this.state.image_url;
+      session.last = this.state.lastName;
+      session.phone = this.state.phoneNumber;
+      session.qualification = this.state.qualification;
+      session.type = this.state.type;
     }
 
     return (
@@ -105,7 +111,7 @@ class Create extends React.Component {
             orientation="vertical"
           >
             <Step>
-              <StepButton onClick={() => this.setState({stepIndex: 0})}>
+              <StepButton onClick={() => this.setState({stepIndex: 0, finished: false})}>
                 Choose Account Type
               </StepButton>
               <StepContent>
@@ -118,7 +124,7 @@ class Create extends React.Component {
                   <StepLabel>
                     Basic Info
                   </StepLabel> :
-                  <StepButton onClick={() => this.setState({stepIndex: 1})}>
+                  <StepButton onClick={() => this.setState({stepIndex: 1, finished: false})}>
                     Basic Info
                   </StepButton>
               }

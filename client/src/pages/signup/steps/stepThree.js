@@ -7,7 +7,7 @@ class StepThree extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      qualifications: '',
+      qualification: '',
       qualTextCount: 255,
       goals: '',
       goalTextCount: 255,
@@ -19,7 +19,7 @@ class StepThree extends React.Component {
   infoUpdater(type, e) {
     if (type === 'qual') {
       this.setState({
-        qualifications: e.target.value,
+        qualification: e.target.value,
         qualTextCount: 255 - e.target.value.length
       });
     }
@@ -32,9 +32,9 @@ class StepThree extends React.Component {
   }
 
   stepThreeUpdater() {
-    const { qualifications, goals } = this.state;
+    const { qualification, goals } = this.state;
     let options = {
-      qualifications: qualifications,
+      qualification: qualification,
       goals: goals
     };
     this.props.updateInfo(options);
@@ -42,13 +42,13 @@ class StepThree extends React.Component {
 
   render() {
 
-    const { qualifications, qualTextCount, goals, goalTextCount } = this.state;
+    const { qualification, qualTextCount, goals, goalTextCount } = this.state;
 
     var disabler = false;
     if (qualTextCount < 0 || goalTextCount < 0) {
       disabler = true;
     }
-    if (qualifications === '' || goals === '') {
+    if (qualification === '' || goals === '') {
       disabler = true;
     }
 
@@ -72,7 +72,7 @@ class StepThree extends React.Component {
           floatingLabelStyle={{fontSize: '16px'}}
           floatingLabelShrinkStyle={{color: '#6a6462'}}
           textareaStyle={{backgroundColor: '#f3f2f1'}}
-          value={this.state.qualifications}
+          value={this.state.qualification}
           onChange={(e) => this.infoUpdater('qual', e)}
         /><br/>
         <span style={{alignSelf: 'flex-end', color: '#6a6462'}}>Characters remaining: <span style={{color: '#4DC1EA'}}>{this.state.qualTextCount}</span></span>
