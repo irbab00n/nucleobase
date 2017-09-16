@@ -8,7 +8,6 @@ import TraineeInfo from './traineeInfo';
 
 const ResultsEntry = (props) => (
 
-  console.log(props),
 
   <div style={{
     height: '150px',
@@ -18,7 +17,9 @@ const ResultsEntry = (props) => (
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '7.5px 0'
-  }}>
+  }}
+  onClick={() => props.select(props.profile)}
+  >
 
     <div style={{
       height: '100%',
@@ -60,20 +61,15 @@ const ResultsEntry = (props) => (
           <span style={{fontSize: '24px', paddingLeft: '10px'}}>{`${props.profile.first} ${props.profile.last}`}</span>
         </div>
 
-        {/* LOCATION IS CURRENTLY MISSING, THE SIGNUP COMPONENT NEEDS TO BE UPDATED PRIOR TO THIS SMALL PORTION WORKING */}
-
         <div style={{height: '15%'}}>
           <span style={{fontStyle: 'italic', color: '#999999', paddingLeft: '10px'}}>{props.profile.location}</span>
         </div>
-
-        {/* PLACEHOLDER FOR THE BIO / GOALS / QUALS SPACE.  BREAKING OUT TO SEPARATE COMPONENTS */}
 
         {
           props.profile.type === 'trainer' ?
             <TrainerInfo qualification={props.profile.qualification} goals={props.profile.goals} /> :
             <TraineeInfo biography={props.profile.biography} goals={goals.profile.goals} />
         }
-
 
       </div>
 
