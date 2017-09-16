@@ -99,10 +99,9 @@ class Create extends React.Component {
         qualification: this.state.qualification,
         type: this.state.type
       };
-      // AJAX.put('/ihateandy2', options, (result) => {
-      //   window.location.pathname = '/dashboard';
-      // });
-      console.log('everything to update in the database', options);
+      AJAX.put('/ihateandy2', options, (result) => {
+        window.location.pathname = '/dashboard';
+      });
     }
 
     return (
