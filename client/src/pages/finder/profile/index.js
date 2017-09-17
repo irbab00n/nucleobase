@@ -1,6 +1,8 @@
 import React from 'react';
 
+
 import CancelBar from './cancelBar';
+import TrainerProfile from './leftView';
 
 
 class Profile extends React.Component {
@@ -23,19 +25,26 @@ class Profile extends React.Component {
 
         <CancelBar toggle={this.props.toggle}/>
 
-        {/* HEADER */}
+        {/* MAIN BODY */}
 
         <div style={{
-          height: '200px',
+          height: '95.4%',
           width: '100%',
-          backgroundColor: 'gray'
-        }}>
+          margin: '0',
+          backgroundColor: '#f2f2f2'
+        }}> 
+
+          {/* TRAINER INFO */}
+
+          <TrainerProfile />
+
+          {/* TRAINER APPOINTMENT */}
+
+          <div className="col-lg-6 col-sm-12" style={{height: '100%', backgroundColor: 'gray'}}>
+            APPOINTMENTS
+          </div>
 
         </div>
-
-        {/* TRAINER PROFILE INFO */}
-
-        {/* SCHEDULE */}
 
       </div>
 

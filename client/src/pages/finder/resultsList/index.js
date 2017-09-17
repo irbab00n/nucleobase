@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Avatar from 'material-ui/Avatar';
-
 import ResultsEntry from '../resultsEntry';
 
 
