@@ -49,7 +49,7 @@ class Finder extends React.Component {
     console.log('profile received from click: ', profile);
     this.setState({
       selected: true,
-      profile
+      selectedProfile: profile
     });
   }
 
@@ -61,7 +61,7 @@ class Finder extends React.Component {
 
   render() {
 
-    const { session, profiles, selected } = this.state;
+    const { session, profiles, selected, selectedProfile } = this.state;
 
     return (
 
@@ -82,7 +82,7 @@ class Finder extends React.Component {
 
           {
             selected === true ? 
-              <Profile toggle={this.toggleSelected}/> :
+              <Profile toggle={this.toggleSelected} profile={selectedProfile}/> :
               <ResultsList profiles={profiles} select={this.selectionHandler}/>
           }
 

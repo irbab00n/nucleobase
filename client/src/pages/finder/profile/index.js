@@ -36,7 +36,7 @@ class Profile extends React.Component {
 
           {/* TRAINER INFO */}
 
-          <TrainerProfile />
+          <TrainerProfile profile={this.props.profile}/>
 
           {/* TRAINER APPOINTMENT */}
 

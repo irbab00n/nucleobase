@@ -37,7 +37,7 @@ class TrainerProfile extends React.Component {
           }}>
 
             <div style={{height: '30%'}}>
-              <span style={{fontSize: '24px', paddingLeft: '10px'}}>THOMAS COSBY</span>
+              <span style={{fontSize: '24px', paddingLeft: '10px'}}>{`${this.props.profile.first} ${this.props.profile.last}`.toUpperCase()}</span>
             </div>
 
             <div style={{height: '20%'}}>
@@ -71,10 +71,7 @@ class TrainerProfile extends React.Component {
           }}>
             <span style={{fontStyle: 'italic', color: '#999999', padding: '10px 0 0 10px'}}>Qualifications</span>
             <p style={{padding: '10px 0 0 30px'}}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Curabitur cursus eget magna eu posuere. Cras convallis ut augue quis facilisis. 
-              Nunc et lobortis arcu, pulvinar vehicula risus. 
-              Maecenas pulvinar dolor augue. Phasellus ex lorem.
+              {this.props.profile.qualification}
             </p>
           </div>
         </div>
@@ -96,10 +93,7 @@ class TrainerProfile extends React.Component {
           }}>
             <span style={{fontStyle: 'italic', color: '#999999', padding: '10px 0 0 10px'}}>Biography</span>
             <p style={{padding: '10px 0 0 30px'}}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-              Curabitur cursus eget magna eu posuere. Cras convallis ut augue quis facilisis. 
-              Nunc et lobortis arcu, pulvinar vehicula risus. 
-              Maecenas pulvinar dolor augue. Phasellus ex lorem.
+              {this.props.profile.biography}
             </p>
           </div>
         </div>

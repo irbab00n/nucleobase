@@ -58,7 +58,7 @@ const ResultsEntry = (props) => (
       }}>
 
         <div style={{height: '25%'}}>
-          <span style={{fontSize: '24px', paddingLeft: '10px'}}>{`${props.profile.first} ${props.profile.last}`}</span>
+          <span style={{fontSize: '24px', paddingLeft: '10px'}}>{`${props.profile.first} ${props.profile.last}`.toUpperCase()}</span>
         </div>
 
         <div style={{height: '15%'}}>
