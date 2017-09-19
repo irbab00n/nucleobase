@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Paper from 'material-ui/Paper';
 
 import CancelBar from './cancelBar';
 import TrainerProfile from './leftView';
@@ -15,7 +16,7 @@ class Profile extends React.Component {
 
     return (
 
-      <div style={{
+      <Paper zDepth={5} style={{
         height: '96%',
         width: '100%',
         display: 'flex',
@@ -28,7 +29,6 @@ class Profile extends React.Component {
           height: '95.5%',
           width: '100%',
           margin: '0',
-          backgroundColor: '#f2f2f2'
         }}> 
 
           <TrainerProfile profile={this.props.profile} />
@@ -37,7 +37,7 @@ class Profile extends React.Component {
 
         </div>
 
-      </div>
+      </Paper>
 
     );
 

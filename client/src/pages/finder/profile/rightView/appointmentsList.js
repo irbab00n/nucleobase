@@ -10,7 +10,7 @@ class AppointmentsList extends React.Component {
   }
 
   purchase(e) {
-    console.log(e.target);
+    console.log('launch purchase interface');
   }
 
   render() {
@@ -21,7 +21,7 @@ class AppointmentsList extends React.Component {
         {
           this.props.appointments.map((appointment, i) => (
             appointment.receiver === null ?
-              <AppointmentEntry key={i} index={i} appointment={appointment} onClick={this.purchase}/> :
+              <div key={i} onClick={this.purchase}><AppointmentEntry index={i} appointment={appointment} /></div> :
               <span key={i}></span>
           ))
         }

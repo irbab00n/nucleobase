@@ -28,7 +28,7 @@ class Buttons extends React.Component {
         <RaisedButton 
           label='Contact Me'
           labelColor="#ffffff"
-          backgroundColor="#4DC1EA"
+          backgroundColor="#f44336"
           onClick={this.handleContact}
         />
       </div>

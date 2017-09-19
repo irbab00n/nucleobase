@@ -1,5 +1,6 @@
 import React from 'react';
 
+// import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 
 import Header from './header';
@@ -17,7 +18,7 @@ class TrainerProfile extends React.Component {
 
     return (
 
-      <div className="col-lg-6 col-sm-12" style={{height: '100%'}}>
+      <div className="col-lg-6 col-sm-12" style={{height: '100%', backgroundColor: '#FFFFFF'}}>
 
         <Header 
           image={this.props.profile.image_url} 

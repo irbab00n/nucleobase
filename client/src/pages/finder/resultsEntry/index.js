@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Avatar from 'material-ui/Avatar';
+import Star from 'material-ui/svg-icons/toggle/star';
 
 import TrainerInfo from './trainerInfo';
 import TraineeInfo from './traineeInfo';
@@ -57,8 +58,15 @@ const ResultsEntry = (props) => (
         flexGrow: '2'
       }}>
 
-        <div style={{height: '25%'}}>
+        <div style={{
+          height: '25%',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}>
           <span style={{fontSize: '24px', paddingLeft: '10px'}}>{`${props.profile.first} ${props.profile.last}`.toUpperCase()}</span>
+          <span style={{width: '10px'}}></span>
+          <Star style={{color: '#333333'}}/>&nbsp;{props.profile.rating === null ? 'No Ratings' : props.profile.rating.toFixed(2)}
         </div>
 
         <div style={{height: '15%'}}>
@@ -73,16 +81,6 @@ const ResultsEntry = (props) => (
 
       </div>
 
-    </div>
-
-    <div style={{
-      height: '100%',
-      minWidth: '75px',
-      display: 'flex',
-      flexDirection: 'column',
-      flexGrow: '0'
-    }}>
-      Test 2
     </div>
 
   </div>

@@ -38,7 +38,7 @@ class Appointments extends React.Component {
 
     return (
 
-      <div className="col-lg-6 col-sm-12" style={{height: '100%', backgroundColor: 'gray'}}>
+      <div className="col-lg-6 col-sm-12" style={{height: '100%', backgroundColor: '#FFFFFF'}}>
 
         <div style={{
           height: '50px',

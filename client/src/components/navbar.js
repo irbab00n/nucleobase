@@ -14,7 +14,7 @@ const Navbar = (props) => (
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#4986A2'
+    backgroundColor: '#000a12'
   }}>
     
     <div className="col-sm-8 col-sm-offset-2" style={{
