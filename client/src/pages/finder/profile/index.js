@@ -3,6 +3,7 @@ import React from 'react';
 
 import CancelBar from './cancelBar';
 import TrainerProfile from './leftView';
+import Appointments from './rightView';
 
 
 class Profile extends React.Component {
@@ -21,28 +22,18 @@ class Profile extends React.Component {
         flexDirection: 'column'
       }}>
 
-        {/* CANCEL BAR */}
-
-        <CancelBar toggle={this.props.toggle}/>
-
-        {/* MAIN BODY */}
+        <CancelBar toggle={this.props.toggle} />
 
         <div style={{
-          height: '95.4%',
+          height: '95.5%',
           width: '100%',
           margin: '0',
           backgroundColor: '#f2f2f2'
         }}> 
 
-          {/* TRAINER INFO */}
+          <TrainerProfile profile={this.props.profile} />
 
-          <TrainerProfile profile={this.props.profile}/>
-
-          {/* TRAINER APPOINTMENT */}
-
-          <div className="col-lg-6 col-sm-12" style={{height: '100%', backgroundColor: 'gray'}}>
-            APPOINTMENTS
-          </div>
+          <Appointments profile={this.props.profile} />
 
         </div>
 
