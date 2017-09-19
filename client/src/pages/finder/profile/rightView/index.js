@@ -15,7 +15,6 @@ class Appointments extends React.Component {
   }
 
   componentWillMount() {
-    console.log('component mounting');
     let options = {
       id: this.props.profile.id
     };

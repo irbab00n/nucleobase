@@ -15,8 +15,6 @@ class TrainerProfile extends React.Component {
 
   render() {
 
-    const gyms = this.buildGyms(this.props.profile.gyms);
-
     return (
 
       <div className="col-lg-6 col-sm-12" style={{height: '100%'}}>
