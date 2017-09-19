@@ -62,7 +62,7 @@ const ResultsEntry = (props) => (
         </div>
 
         <div style={{height: '15%'}}>
-          <span style={{fontStyle: 'italic', color: '#999999', paddingLeft: '10px'}}>{props.profile.location}</span>
+          <span style={{fontStyle: 'italic', color: '#999999', paddingLeft: '10px'}}>{props.profile.location === '' ? 'No Location Specified' : props.profile.location}</span>
         </div>
 
         {

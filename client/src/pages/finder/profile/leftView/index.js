@@ -19,7 +19,13 @@ class TrainerProfile extends React.Component {
 
       <div className="col-lg-6 col-sm-12" style={{height: '100%'}}>
 
-        <Header image={this.props.profile.image_url} first={this.props.profile.first} last={this.props.profile.last} />
+        <Header 
+          image={this.props.profile.image_url} 
+          first={this.props.profile.first} 
+          last={this.props.profile.last} 
+          location={this.props.profile.location}
+          rating={this.props.profile.rating}
+        />
 
         <Divider />
 

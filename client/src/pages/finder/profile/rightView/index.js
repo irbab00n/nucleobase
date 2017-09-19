@@ -16,7 +16,7 @@ class Appointments extends React.Component {
 
   componentWillMount() {
     let options = {
-      id: this.props.profile.id
+      sender: this.props.profile.id
     };
     this.setState({
       loading: true

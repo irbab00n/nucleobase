@@ -17,10 +17,12 @@ class AppointmentsList extends React.Component {
 
     return (
 
-      <div style={{height: '94%', width: '100%', backgroundColor: 'white'}}>
+      <div style={{height: '94%', width: '100%', backgroundColor: 'white', display: 'list', overflowY: 'scroll'}}>
         {
           this.props.appointments.map((appointment, i) => (
-            <AppointmentEntry key={i} appointment={appointment} onClick={this.purchase}/>
+            appointment.receiver === null ?
+              <AppointmentEntry key={i} appointment={appointment} onClick={this.purchase}/> :
+              <span key={i}></span>
           ))
         }
       </div>

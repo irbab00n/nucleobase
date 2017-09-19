@@ -11,7 +11,6 @@ class AppointmentEntry extends React.Component {
 
   render() {
 
-    let appointmentTime = JSON.parse(this.props.appointment.time);
     let appointmentDate = this.props.appointment.date.split(' ');
     // appointment.date = "Sat Sep 23 2017 00:00:00 GMT-0700 (PDT)"
 
@@ -90,7 +89,7 @@ class AppointmentEntry extends React.Component {
             justifyContent: 'flex-start',
             alignItems: 'center',
           }}>
-            <span>{`From: ${parseTime(appointmentTime.from)} To: ${parseTime(appointmentTime.to)}`}</span>
+            <span>{`From: ${parseTime(this.props.appointment.time.from)} To: ${parseTime(this.props.appointment.time.from)}`}</span>
           </div>
         </div>
 

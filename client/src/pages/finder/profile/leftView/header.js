@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Avatar from 'material-ui/Avatar';
+import Star from 'material-ui/svg-icons/toggle/star';
 
 
 const Header = (props) => (
@@ -24,15 +25,25 @@ const Header = (props) => (
     }}>
 
       <div style={{height: '30%'}}>
-        <span style={{fontSize: '24px', paddingLeft: '10px'}}>{`${props.first} ${props.last}`.toUpperCase()}</span>
+        <span style={{fontSize: '24px'}}>{`${props.first} ${props.last}`.toUpperCase()}</span>
       </div>
 
       <div style={{height: '20%'}}>
-        <span style={{fontStyle: 'italic', color: '#999999', paddingLeft: '10px'}}>San Francisco, CA</span>
+        <span style={{fontStyle: 'italic', color: '#999999'}}>{props.location === '' ? 'No Location Specified' : props.location}</span>
       </div>
 
       <div style={{height: '50%'}}>
-        <span style={{fontStyle: 'italic', color: '#999999', paddingLeft: '10px'}}>STAR RATING</span>
+
+        <div style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          fontStyle: 'italic',
+          color: '#999999',
+        }}>
+          <Star style={{color: '#333333'}}/>&nbsp;{props.rating === null ? 'No Ratings' : props.rating.toFixed(2)}
+        </div>
+
       </div>
 
     </div>
