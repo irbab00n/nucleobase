@@ -9,8 +9,8 @@ class AppointmentsList extends React.Component {
     this.purchase = this.purchase.bind(this);
   }
 
-  purchase() {
-    console.log('You\'ve just purchased me!!!');
+  purchase(e) {
+    console.log(e.target);
   }
 
   render() {
@@ -21,7 +21,7 @@ class AppointmentsList extends React.Component {
         {
           this.props.appointments.map((appointment, i) => (
             appointment.receiver === null ?
-              <AppointmentEntry key={i} appointment={appointment} onClick={this.purchase}/> :
+              <AppointmentEntry key={i} index={i} appointment={appointment} onClick={this.purchase}/> :
               <span key={i}></span>
           ))
         }

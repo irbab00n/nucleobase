@@ -13,6 +13,7 @@ class AppointmentEntry extends React.Component {
 
     let appointmentDate = this.props.appointment.date.split(' ');
     // appointment.date = "Sat Sep 23 2017 00:00:00 GMT-0700 (PDT)"
+    let background = this.props.index % 2 === 0 ? '#f2f2f2' : '#ffffff';
 
     return (
 
@@ -23,7 +24,7 @@ class AppointmentEntry extends React.Component {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        backgroundColor: '#f2f2f2'
+        backgroundColor: background
       }}>
 
         {/* Date */}
