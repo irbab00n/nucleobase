@@ -22,6 +22,9 @@ class Appointments extends React.Component {
       loading: true
     });
     AJAX.get('/appointments', options, (appointments) => {
+      appointments.sort(function(a, b) {
+        return Date.parse(a.date) - Date.parse(b.date);
+      });
       this.setState({
         appointments,
         loading: false
