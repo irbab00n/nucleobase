@@ -52,14 +52,22 @@ class Finder extends React.Component {
     if (options.action === 'toggle') {
       let filters = this.state.filters;
       filters[options.filter].toggled = !filters[options.filter].toggled;
+<<<<<<< HEAD
       filters[options.filter].param = options.param || '';
+=======
+      filters[options.filter].param = options.param;
+>>>>>>> (feat) Filtering Search Results by Rating
       this.setState({
         filters
       }, this.applyFilters);
     }
     if (options.action === 'update') {
       let filters = this.state.filters;
+<<<<<<< HEAD
       filters[options.filter].param = options.param || '';
+=======
+      filters[options.filter].param = options.param;
+>>>>>>> (feat) Filtering Search Results by Rating
       this.setState({
         filters
       }, this.applyFilters);
@@ -74,9 +82,17 @@ class Finder extends React.Component {
       if (filters[filter].toggled) {
         found = true;
         let options = {};
+<<<<<<< HEAD
         this.state.session.type === 'trainer' ?
           options.filter = 'trainee' :
           options.filter = 'trainer';
+=======
+        if (this.state.session.type === 'trainer') {
+          options.filter = 'trainee';
+        } else {
+          options.filter = 'trainer';
+        }
+>>>>>>> (feat) Filtering Search Results by Rating
         AJAX.get('/profilesByFilter', options, (profiles) => {
           let filtered = filterFunctions[filter](profiles, filters[filter].param);
           this.setState({
@@ -85,6 +101,10 @@ class Finder extends React.Component {
         });
       }
     }
+<<<<<<< HEAD
+=======
+    console.log('found', found);
+>>>>>>> (feat) Filtering Search Results by Rating
     found === true ? null : this.fetchProfiles();
   }
 
@@ -97,6 +117,7 @@ class Finder extends React.Component {
   }
 
   fetchProfiles() {
+    console.log('THIS RAN AS WELL');
     let options = {};
     this.state.session.type === 'trainer' ?
       options.filter = 'trainee' :
