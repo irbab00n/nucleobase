@@ -10,9 +10,13 @@ import AJAX from '../../ajax';
 
 const filterFunctions = {
   'rating': (profiles, param) => {
-    let profilesCopy = profiles.slice();
     return profilesCopy.filter((profile) => {
       return profile.rating >= param;
+    });
+  },
+  'price': (profiles) => {
+    return profiles.sort((a, b) => {
+      return a.avg_price - b.avg_price;
     });
   }
 };
@@ -48,14 +52,14 @@ class Finder extends React.Component {
     if (options.action === 'toggle') {
       let filters = this.state.filters;
       filters[options.filter].toggled = !filters[options.filter].toggled;
-      filters[options.filter].param = options.param;
+      filters[options.filter].param = options.param || '';
       this.setState({
         filters
       }, this.applyFilters);
     }
     if (options.action === 'update') {
       let filters = this.state.filters;
-      filters[options.filter].param = options.param;
+      filters[options.filter].param = options.param || '';
       this.setState({
         filters
       }, this.applyFilters);
@@ -70,11 +74,9 @@ class Finder extends React.Component {
       if (filters[filter].toggled) {
         found = true;
         let options = {};
-        if (this.state.session.type === 'trainer') {
-          options.filter = 'trainee';
-        } else {
+        this.state.session.type === 'trainer' ?
+          options.filter = 'trainee' :
           options.filter = 'trainer';
-        }
         AJAX.get('/profilesByFilter', options, (profiles) => {
           let filtered = filterFunctions[filter](profiles, filters[filter].param);
           this.setState({
@@ -83,7 +85,6 @@ class Finder extends React.Component {
         });
       }
     }
-    console.log('found', found);
     found === true ? null : this.fetchProfiles();
   }
 
@@ -96,13 +97,10 @@ class Finder extends React.Component {
   }
 
   fetchProfiles() {
-    console.log('THIS RAN AS WELL');
     let options = {};
-    if (this.state.session.type === 'trainer') {
-      options.filter = 'trainee';
-    } else {
+    this.state.session.type === 'trainer' ?
+      options.filter = 'trainee' :
       options.filter = 'trainer';
-    }
     AJAX.get('/profilesByFilter', options, (profiles) => {
       this.setState({
         profiles
