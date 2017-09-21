@@ -8,19 +8,83 @@ import ResultsList from './resultsList';
 
 import AJAX from '../../ajax';
 
+const filterFunctions = {
+  'rating': (profiles, param) => {
+    let profilesCopy = profiles.slice();
+    return profilesCopy.filter((profile) => {
+      return profile.rating >= param;
+    });
+  }
+};
 
 class Finder extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      filters: {
+        rating: {
+          toggled: false,
+          param: ''
+        },
+        price: {
+          toggled: false,
+          param: ''
+        },
+      },
       session: '',
       profiles: [],
       selected: false,
-      selectedProfile: {}
+      selectedProfile: {},
+      trigger: false
     };
+    this.handleFilter = this.handleFilter.bind(this);
+    this.applyFilters = this.applyFilters.bind(this);
     this.toggleSelected = this.toggleSelected.bind(this);
     this.fetchProfiles = this.fetchProfiles.bind(this);
     this.selectionHandler = this.selectionHandler.bind(this);
+  }
+
+  handleFilter(options) {
+    if (options.action === 'toggle') {
+      let filters = this.state.filters;
+      filters[options.filter].toggled = !filters[options.filter].toggled;
+      filters[options.filter].param = options.param;
+      this.setState({
+        filters
+      }, this.applyFilters);
+    }
+    if (options.action === 'update') {
+      let filters = this.state.filters;
+      filters[options.filter].param = options.param;
+      this.setState({
+        filters
+      }, this.applyFilters);
+    }
+  }
+
+  /* applyFilters */
+  applyFilters() {
+    const { filters } = this.state;
+    let found = false;
+    for (let filter in filters) {
+      if (filters[filter].toggled) {
+        found = true;
+        let options = {};
+        if (this.state.session.type === 'trainer') {
+          options.filter = 'trainee';
+        } else {
+          options.filter = 'trainer';
+        }
+        AJAX.get('/profilesByFilter', options, (profiles) => {
+          let filtered = filterFunctions[filter](profiles, filters[filter].param);
+          this.setState({
+            profiles: filtered
+          });
+        });
+      }
+    }
+    console.log('found', found);
+    found === true ? null : this.fetchProfiles();
   }
 
   componentDidMount() {
@@ -32,6 +96,7 @@ class Finder extends React.Component {
   }
 
   fetchProfiles() {
+    console.log('THIS RAN AS WELL');
     let options = {};
     if (this.state.session.type === 'trainer') {
       options.filter = 'trainee';
@@ -78,7 +143,7 @@ class Finder extends React.Component {
           padding: '0'
         }}>
           
-          <SearchBar session={session} profiles={profiles}/>
+          <SearchBar session={session} profiles={profiles} handleFilter={this.handleFilter}/>
 
           {
             selected === true ? 

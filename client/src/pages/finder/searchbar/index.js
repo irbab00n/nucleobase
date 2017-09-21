@@ -16,6 +16,16 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      filters: {
+        rating: {
+          toggled: false,
+          param: ''
+        },
+        price: {
+          toggled: false,
+          param: ''
+        },
+      },
       drawerOpen: false
     };
     this.handleToggle = this.handleToggle.bind(this);
@@ -28,6 +38,8 @@ class SearchBar extends React.Component {
   }
 
   render() {
+
+    const { filters } = this.state;
 
     return (
 
@@ -56,9 +68,9 @@ class SearchBar extends React.Component {
             </IconButton>
           </div>
 
-          <FilterRating />
+          <FilterRating handleFilter={this.props.handleFilter} status={filters.rating.toggled} />
 
-          <FilterPrice />
+          <FilterPrice handleFilter={this.props.handleFilter} status={filters.price.toggled} />
 
         </Drawer>
 
