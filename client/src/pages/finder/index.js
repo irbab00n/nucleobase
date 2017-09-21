@@ -53,10 +53,14 @@ class Finder extends React.Component {
       let filters = this.state.filters;
       filters[options.filter].toggled = !filters[options.filter].toggled;
 <<<<<<< HEAD
+<<<<<<< HEAD
       filters[options.filter].param = options.param || '';
 =======
       filters[options.filter].param = options.param;
 >>>>>>> (feat) Filtering Search Results by Rating
+=======
+      filters[options.filter].param = options.param || '';
+>>>>>>> (feat) Results List Filters By Price
       this.setState({
         filters
       }, this.applyFilters);
@@ -64,10 +68,14 @@ class Finder extends React.Component {
     if (options.action === 'update') {
       let filters = this.state.filters;
 <<<<<<< HEAD
+<<<<<<< HEAD
       filters[options.filter].param = options.param || '';
 =======
       filters[options.filter].param = options.param;
 >>>>>>> (feat) Filtering Search Results by Rating
+=======
+      filters[options.filter].param = options.param || '';
+>>>>>>> (feat) Results List Filters By Price
       this.setState({
         filters
       }, this.applyFilters);
@@ -83,6 +91,7 @@ class Finder extends React.Component {
         found = true;
         let options = {};
 <<<<<<< HEAD
+<<<<<<< HEAD
         this.state.session.type === 'trainer' ?
           options.filter = 'trainee' :
           options.filter = 'trainer';
@@ -93,6 +102,11 @@ class Finder extends React.Component {
           options.filter = 'trainer';
         }
 >>>>>>> (feat) Filtering Search Results by Rating
+=======
+        this.state.session.type === 'trainer' ?
+          options.filter = 'trainee' :
+          options.filter = 'trainer';
+>>>>>>> (feat) Results List Filters By Price
         AJAX.get('/profilesByFilter', options, (profiles) => {
           let filtered = filterFunctions[filter](profiles, filters[filter].param);
           this.setState({
@@ -102,9 +116,12 @@ class Finder extends React.Component {
       }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     console.log('found', found);
 >>>>>>> (feat) Filtering Search Results by Rating
+=======
+>>>>>>> (feat) Results List Filters By Price
     found === true ? null : this.fetchProfiles();
   }
 
@@ -117,7 +134,6 @@ class Finder extends React.Component {
   }
 
   fetchProfiles() {
-    console.log('THIS RAN AS WELL');
     let options = {};
     this.state.session.type === 'trainer' ?
       options.filter = 'trainee' :
