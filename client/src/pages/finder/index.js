@@ -10,7 +10,7 @@ import AJAX from '../../ajax';
 
 const filterFunctions = {
   'rating': (profiles, param) => {
-    return profilesCopy.filter((profile) => {
+    return profiles.filter((profile) => {
       return profile.rating >= param;
     });
   },

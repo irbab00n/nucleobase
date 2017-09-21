@@ -38,7 +38,7 @@ class Appointments extends React.Component {
 
     return (
 
-      <div className="col-lg-6 col-sm-12" style={{height: '100%', backgroundColor: '#FFFFFF'}}>
+      <div className="col-lg-6 col-sm-12" style={{height: '100%', backgroundColor: '#FFFFFF', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
 
         <div style={{
           height: '50px',
@@ -56,6 +56,16 @@ class Appointments extends React.Component {
             <h1>Loading</h1> :
             <AppointmentsList appointments={appointments} />
         }
+
+        <span style={{height: '30px'}}></span>
+
+        <div style={{
+          height: '30%',
+          width: '100%',
+          backgroundColor: 'gray'
+        }}>
+          Some content
+        </div>
 
       </div>
 

@@ -44,40 +44,46 @@ class SearchBar extends React.Component {
     return (
 
       <div style={{
-        width: '100%',
-        height: '38px',
         display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: '#263238'
+        flexDirection: 'column',
+        width: '100%',
       }}>
-        <IconButton onClick={this.handleToggle} iconStyle={{color: '#FFFFFF'}}>
-          <Hamburger />
-        </IconButton>
+        <span style={{width: '100%', height: '2px', backgroundColor: '#f44336'}}></span>
+        <div style={{
+          width: '100%',
+          height: '36px',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          backgroundColor: '#263238'
+        }}>
+          <IconButton onClick={this.handleToggle} iconStyle={{color: '#FFFFFF'}}>
+            <Hamburger />
+          </IconButton>
 
-        <Drawer open={this.state.drawerOpen} style={{display: 'flex', flexDirection: 'column'}}>
-          <div style={{
-            height: '50px',
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'flex-end',
-            backgroundColor: '#263238'
-          }}>
-            <IconButton onClick={this.handleToggle} iconStyle={{color: '#FFFFFF'}}>
-              <Clear />
-            </IconButton>
-          </div>
+          <Drawer open={this.state.drawerOpen} style={{display: 'flex', flexDirection: 'column'}}>
+            <div style={{
+              height: '50px',
+              width: '100%',
+              display: 'flex',
+              justifyContent: 'flex-end',
+              backgroundColor: '#263238'
+            }}>
+              <IconButton onClick={this.handleToggle} iconStyle={{color: '#FFFFFF'}}>
+                <Clear />
+              </IconButton>
+            </div>
 
-          <FilterRating handleFilter={this.props.handleFilter} status={filters.rating.toggled} />
+            <FilterRating handleFilter={this.props.handleFilter} status={filters.rating.toggled} />
 
-          <FilterPrice handleFilter={this.props.handleFilter} status={filters.price.toggled} />
+            <FilterPrice handleFilter={this.props.handleFilter} status={filters.price.toggled} />
 
-        </Drawer>
+          </Drawer>
 
-        <span style={{color: '#ffffff'}}>Filters</span>
+          <span style={{color: '#ffffff'}}>Filters</span>
 
+        </div>
       </div>
-
     );
 
   }
